@@ -17,6 +17,4 @@ use App\Http\Controllers\ItemsController;
 
 $router->get('/', 'ItemsController@index');
 
-$router->put('/{id}', 'ItemsController@updateItems');
-
 $router->post('/', 'ItemsController@createItem');
