@@ -2,6 +2,8 @@
 
 /** @var \Laravel\Lumen\Routing\Router $router */
 
+use App\Http\Controllers\ItemsController;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -13,10 +15,8 @@
 |
 */
 
-$router->get('/in', function () use ($router) {
-    return $router->app->version();
-});
+$router->get('/', 'ItemsController@index');
 
-$router->get('/out', function () use ($router) {
-    return $router->app->version();
-});
+$router->put('/{id}', 'ItemsController@updateItems');
+
+$router->post('/', 'ItemsController@createItem');
